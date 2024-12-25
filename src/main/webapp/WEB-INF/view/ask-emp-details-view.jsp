@@ -29,6 +29,23 @@
     <form:option value="Liability Management" label="LM"/>--%>
     <form:options items="${employee.departments}"/>
     </form:select>
+    <br><br>
+    <h3>Which car do you drive?</h3>
+    <br>
+
+    <%--<form:radiobutton path="carBrand" value="BMW"/> BMW
+    <br>
+    <form:radiobutton path="carBrand" value="Audi"/> Audi
+    <br>
+    <form:radiobutton path="carBrand" value="Nisan"/> Nisan
+    <br>
+    <form:radiobutton path="carBrand" value="Volkswagen"/> Volkswagen
+    <br><br>--%>
+    <div style="display: flex; flex-direction: column;">
+    <form:radiobuttons path= "carBrand" items="${employee.carBrands}"/>
+    </div>
+    <br>
+
     <input type="submit" value="OK">
 
 </form:form>

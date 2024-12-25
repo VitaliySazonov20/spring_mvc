@@ -13,7 +13,35 @@ public class Employee {
 
     private String department;
 
-    private Map<String, String> departments;
+    private final Map<String, String> departments;
+
+    private String carBrand;
+
+    private final Map<String,String> carBrands;
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", salary=" + salary +
+                ", department='" + department + '\'' +
+                ", departments=" + departments +
+                ", carBrand='" + carBrand + '\'' +
+                '}';
+    }
+
+    public Map<String, String> getCarBrands() {
+        return carBrands;
+    }
+
+    public String getCarBrand() {
+        return carBrand;
+    }
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
 
     public Employee() {
         departments = new HashMap<>();
@@ -21,6 +49,12 @@ public class Employee {
         departments.put("HR","Human Resources");
         departments.put("Sales","Sales");
         departments.put("LM","Liability Management");
+
+        carBrands = new HashMap<>();
+        carBrands.put("BMW","BMW");
+        carBrands.put("Audi","Audi");
+        carBrands.put("Nisan","Nisan");
+        carBrands.put("Volkswagen","Volkswagen");
     }
 
     public String getName() {
@@ -59,13 +93,4 @@ public class Employee {
         return departments;
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", salary=" + salary +
-                ", department='" + department + '\'' +
-                '}';
-    }
 }
