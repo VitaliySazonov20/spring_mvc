@@ -30,6 +30,8 @@ Your Language(s):
 </ul>
 
 Phone number: ${employee.phoneNumber}
+<br><br>
+Email: ${employee.email}
 
 
 </body>
