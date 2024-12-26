@@ -1,12 +1,22 @@
 package com.sazonov.spring.mvc;
 
+
+
+//import javax.validation.constraints.Size;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
 
+    @Size(min=2, message = "Name is too short.")
     private String name;
 
+//    @NotEmpty(message = "surname is required!!")
+    @NotBlank(message = "surname is required!!")
     private String surname;
 
     private int salary;

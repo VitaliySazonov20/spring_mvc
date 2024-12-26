@@ -1,13 +1,17 @@
 package com.sazonov.spring.mvc;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.support.AbstractMultipartHttpServletRequest;
+
+//import javax.validation.Valid;
 
 
 @Controller
@@ -52,7 +56,11 @@ public class MyController {
 //        return "show-emp-details-view";
 //    }
     @RequestMapping("/showDetails")
-    public String showEmpDetails(@ModelAttribute("employee") Employee employee) {
+    public String showEmpDetails(@Valid @ModelAttribute("employee") Employee employee
+            , BindingResult bindingResult) {
+        if(bindingResult.hasErrors()){
+            return "ask-emp-details-view";
+        }
         return "show-emp-details-view";
     }
 }
