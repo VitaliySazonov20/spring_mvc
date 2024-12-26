@@ -44,8 +44,20 @@
     <div style="display: flex; flex-direction: column;">
     <form:radiobuttons path= "carBrand" items="${employee.carBrands}"/>
     </div>
+    <br><br>
+    <h3>Which languages do you speak?</h3>
+    <%--<form:checkbox path="languages" value="English"/> English
     <br>
-
+    <form:checkbox path="languages" value="Russian"/> Russian
+    <br>
+    <form:checkbox path="languages" value="German"/> German
+    <br>
+    <form:checkbox path="languages" value="French"/> French
+    <br>--%>
+<div style="display: flex; flex-direction: column;">
+    <form:checkboxes path="languages" items="${employee.languageList}"/>
+</div>
+<br>
     <input type="submit" value="OK">
 
 </form:form>

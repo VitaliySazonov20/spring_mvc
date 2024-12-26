@@ -19,6 +19,14 @@ public class Employee {
 
     private final Map<String,String> carBrands;
 
+    private String[] languages;
+
+    private final Map<String,String> languageList;
+
+    public Map<String, String> getLanguageList() {
+        return languageList;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -33,6 +41,14 @@ public class Employee {
 
     public Map<String, String> getCarBrands() {
         return carBrands;
+    }
+
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
     }
 
     public String getCarBrand() {
@@ -55,6 +71,12 @@ public class Employee {
         carBrands.put("Audi","Audi");
         carBrands.put("Nisan","Nisan");
         carBrands.put("Volkswagen","Volkswagen");
+
+        languageList = new HashMap<>();
+        languageList.put("EN","English");
+        languageList.put("DE","Deutch");
+        languageList.put("FR","French");
+        languageList.put("RU","Russian");
     }
 
     public String getName() {

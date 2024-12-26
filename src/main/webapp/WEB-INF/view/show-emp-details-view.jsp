@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 
 <html>
@@ -20,6 +21,13 @@ Your Salary: ${employee.salary}
 Your Department: ${employee.department}
 <br><br>
 Your car brand: ${employee.carBrand}
+<br><br>
+Your Language(s):
+<ul>
+    <c:forEach var="lang" items="${employee.languages}">
+        <li>    ${lang}    </li>
+    </c:forEach>
+</ul>
 
 
 </body>
