@@ -3,10 +3,8 @@ package com.sazonov.spring.mvc;
 
 
 //import javax.validation.constraints.Size;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +17,8 @@ public class Employee {
     @NotBlank(message = "surname is required!!")
     private String surname;
 
+    @Min(value = 500,message = "Must be greater than 499")
+    @Max(value = 1000,message = "Must be less than 1001")
     private int salary;
 
     private String department;
@@ -32,6 +32,17 @@ public class Employee {
     private String[] languages;
 
     private final Map<String,String> languageList;
+
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "please use pattern XXX-XX-XX")
+    private String phoneNumber;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     public Map<String, String> getLanguageList() {
         return languageList;
@@ -84,7 +95,7 @@ public class Employee {
 
         languageList = new HashMap<>();
         languageList.put("EN","English");
-        languageList.put("DE","Deutch");
+        languageList.put("DE","Deutsch");
         languageList.put("FR","French");
         languageList.put("RU","Russian");
     }

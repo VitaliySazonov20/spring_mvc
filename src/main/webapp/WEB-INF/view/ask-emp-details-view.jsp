@@ -23,6 +23,7 @@
     <form:errors path="surname"/>
     <br><br>
     Salary <form:input path= "salary"/>
+    <form:errors path="salary"/>
     <br><br>
     Department <form:select path="department">
     <%--<form:option value="Information Technology" label="IT"/>
@@ -59,7 +60,10 @@
 <div style="display: flex; flex-direction: column;">
     <form:checkboxes path="languages" items="${employee.languageList}"/>
 </div>
-<br>
+<br><br>
+    Phone Number <form:input path= "phoneNumber"/>
+    <form:errors path="phoneNumber"/>
+    <br>
     <input type="submit" value="OK">
 
 </form:form>
